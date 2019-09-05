@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.1-stretch AS build
 WORKDIR /src
 COPY ["HerokuDemo.csproj", "HerokuDemo/"]
 RUN dotnet restore "HerokuDemo/HerokuDemo.csproj"
-COPY . "./HerokuTest1"
+COPY . "./HerokuDemo"
 WORKDIR "/src/HerokuDemo"
 RUN dotnet build "HerokuDemo.csproj" -c Release -o /app
 
